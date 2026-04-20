@@ -1,15 +1,19 @@
 /* src/components/Navbar.css */
 .navbar-container {
   display: flex;
-  justify-content: space-between; /* เพื่อดันโลโก้ไปซ้าย ลิงก์ไปขวา */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1.5rem 5%; /* เพิ่ม padding ซ้ายขวา */
-  position: absolute;
+  padding: 1rem 10%; /* ปรับให้กว้างเท่ากับเนื้อหา Hero */
+  position: fixed; 
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1000; 
+  /* ------------------- */
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7); /* พื้นหลังโปร่งแสง */
+  backdrop-filter: blur(10px); /* เอฟเฟกต์กระจกฝ้า */
+  transition: padding 0.3s ease;
 }
 
 .logo {

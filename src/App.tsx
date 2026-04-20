@@ -1,18 +1,29 @@
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import './App.css'; // ไฟล์ CSS หลักสำหรับคุมธีม (เช่น Dark Mode)
+import Project from './components/Project';
+import ProjectDetail from './pages/ProjectDetail'; // ไฟล์ใหม่ที่จะสร้าง
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      {/* <About /> */}
-      {/* <Portfolio /> */}
-      {/* <Contact /> */}
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          {/* หน้าแรกที่มีทั้ง Hero และ Projects */}
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Project />
+            </>
+          } />
+          
+          {/* หน้าแสดงรายละเอียดโปรเจคแยกต่างหาก */}
+          <Route path="/project/:id" element={<ProjectDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
+// ต่อท้ายไฟล์ App.tsx
 export default App;

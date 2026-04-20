@@ -1,0 +1,158 @@
+/* src/pages/ProjectDetail.css */
+.project-detail-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 5% 50px;
+  color: #e0e0e0;
+}
+
+.back-link {
+  color: #00f7a0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.detail-header h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin: 20px 0 10px;
+}
+
+.project-tag {
+  color: #00f7a0;
+  background: rgba(0, 247, 160, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Image Grid 2 รูปคู่กัน */
+.detail-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.detail-image-wrapper img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.image-caption {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.detail-content h2 {
+  color: #00f7a0;
+  border-bottom: 1px solid rgba(0, 247, 160, 0.3);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.tech-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.tech-list, .feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tech-list li, .feature-list li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.tech-list li::before, .feature-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #00f7a0;
+}
+/* การตั้งค่ารูปภาพ */
+.detail-image-wrapper {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.img-clickable {
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.img-clickable:hover {
+  transform: scale(1.02);
+}
+
+/* แก้ไขรูปที่ 2 (แนวตั้ง) ให้ไม่ใหญ่เกินไป */
+.img-mobile {
+  max-height: 500px; /* จำกัดความสูงของรูปมือถือ */
+  width: auto;       /* ให้ความกว้างปรับตามสัดส่วน */
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  cursor: zoom-out;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 247, 160, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* สำหรับมือถือ */
+@media (max-width: 768px) {
+  .detail-image-grid, .tech-specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
