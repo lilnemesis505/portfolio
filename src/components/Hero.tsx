@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
         />
         {/* --------------------------- */}
         <p className="hero-description">
-          Ponsakorn Maneesai Bachelor Degree on Information Tecnology. I have experience in Web Development
+          Ponsakorn Maneesai Bachelor Degree on Information Tecnology. I have experience intern in Web Development
           and Coputer Maintenance
           <br />
         </p>
